@@ -1,0 +1,19 @@
+{
+  "name": "archetype",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Gio d'Amelio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/giodamelio/archetype.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/giodamelio/archetype/issues"
+  },
+  "homepage": "https://github.com/giodamelio/archetype"
+}
