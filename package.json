@@ -7,8 +7,11 @@
   "dependencies": {
     "express": "~3.4.8"
   },
+  "devDependencies": {
+    "nodemon": "~1.0.14"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/.bin/nodemon"
   },
   "repository": {
     "type": "git",
