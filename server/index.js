@@ -2,6 +2,7 @@ var path = require("path");
 
 var express = require("express");
 var browserify = require("browserify-middleware");
+var helmet = require("helmet");
 
 // Make our experess instance
 var app = express();
@@ -10,8 +11,8 @@ var app = express();
 
 // All environments
 app.configure(function(){
-    // Our routes
-    app.use(app.router);
+    // Use helmet to protect from various attacks
+    helmet.defaults(app);
 
     // Serve our static routes
     app.use(express.static(path.normalize(__dirname + "/../static")));
