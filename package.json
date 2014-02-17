@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "author": "Gio d'Amelio",
-  "main": "index.js",
+  "main": "app/index.js",
   "dependencies": {
     "express": "~3.4.8"
   },
