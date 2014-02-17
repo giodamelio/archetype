@@ -6,14 +6,42 @@ var browserify = require("browserify-middleware");
 // Make our experess instance
 var app = express();
 
-// Setup our middleware
-app.use(app.router);
-app.use(express.static(path.normalize(__dirname + "/../static")));
-app.use(express.errorHandler());
+// Configuration
 
-// Setup our template engine
-app.set("views", path.normalize(__dirname + "/../client"));
-app.set("view engine", "jade");
+// All environments
+app.configure(function(){
+    // Our routes
+    app.use(app.router);
+
+    // Serve our static routes
+    app.use(express.static(path.normalize(__dirname + "/../static")));
+
+    // Hangle Errors
+    app.use(express.errorHandler());
+
+    // Parse cookies and keep sessions
+    app.use(express.cookieParser());
+    app.use(express.session({ secret: "secret goes here" }));
+    app.use(express.urlencoded())
+    app.use(express.json())
+
+    // Protect from csrf attacks
+    app.use(express.csrf());
+
+    // Setup our template engine
+    app.set("views", path.normalize(__dirname + "/../client"));
+    app.set("view engine", "jade");
+})
+
+// Development only
+app.configure("development", function(){
+    // Devolpment errors
+    app.use(express.errorHandler());
+})
+
+// Production only
+app.configure("production", function(){
+})
 
 // The root of our app
 app.get("/", function(req, res){
