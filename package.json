@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "",
   "author": "Gio d'Amelio",
-  "main": "app/index.js",
+  "main": "server/index.js",
   "dependencies": {
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "jade": "~1.1.5"
   },
   "devDependencies": {
     "nodemon": "~1.0.14"
