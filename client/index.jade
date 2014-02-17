@@ -1,5 +1,5 @@
 doctype html
-html
+html(ng-app="Archetype")
     head
         title Hello World!
 
@@ -7,5 +7,14 @@ html
     body
         div.row
             div.small-12.text-center.columns
-                h2 Hello World!
-                button Test Button!
+                div(ng-controller="HelloWorld")
+                    h2 Hello {{name}}
+                    br
+                    b Your name:
+                    input(type="text", ng-model="name")
+
+        //- Angularjs
+        script(src="/vendor/angular/angular.min.js", type="text/javascript")
+
+        //- Our js
+        script(src="/bundle.js", type="text/javascript")
